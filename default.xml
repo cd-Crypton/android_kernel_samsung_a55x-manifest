@@ -3,11 +3,11 @@
   <remote name="aosp" fetch="https://android.googlesource.com" review="https://android-review.googlesource.com/" />
   <default revision="main-kernel-build-2023" remote="aosp" sync-j="4" />
   <remote name="cd-Crypton" fetch="https://github.com/cd-Crypton" revision="android14-6.1" />
-  <project path="build/kernel" name="kernel/build" >
-    <linkfile src="kleaf/bazel.sh" dest="tools/bazel" />
-    <linkfile src="kleaf/bazel.WORKSPACE" dest="WORKSPACE" />
-    <linkfile src="build_test.sh" dest="build/build_test.sh" />
-    <linkfile src="config.sh" dest="build/config.sh" />
+  <project path="kernel_platform/build/kernel" name="kernel/build" >
+    <linkfile src="kleaf/bazel.sh" dest="kernel_platform/tools/bazel" />
+    <linkfile src="kleaf/bazel.WORKSPACE" dest="kernel_platform/WORKSPACE" />
+    <linkfile src="build_test.sh" dest="kernel_platform/build/build_test.sh" />
+    <linkfile src="config.sh" dest="kernel_platform/build/config.sh" />
   </project>
   <project path="kernel_platform" name="platform_a55x" remote="cd-Crypton" />
   <project path="kernel_platform/build/bazel_common_rules" name="platform/build/bazel_common_rules" remote="aosp" />
