@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="aosp" fetch="https://android.googlesource.com" review="https://android-review.googlesource.com/" />
+  <default revision="main-kernel-build-2023" remote="aosp" sync-j="4" />
+  <remote name="cd-Crypton" fetch="https://github.com/cd-Crypton" revision="android14-6.1" />
+  <project path="build/kernel" name="kernel/build" >
+    <linkfile src="kleaf/bazel.sh" dest="tools/bazel" />
+    <linkfile src="kleaf/bazel.WORKSPACE" dest="WORKSPACE" />
+    <linkfile src="build_test.sh" dest="build/build_test.sh" />
+    <linkfile src="config.sh" dest="build/config.sh" />
+  </project>
+  <project path="kernel_platform" name="platform_a55x" remote="cd-Crypton" />
+  <project path="kernel_platform/build/bazel_common_rules" name="platform/build/bazel_common_rules" remote="aosp" />
+  <project path="kernel_platform/prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" remote="aosp" clone-depth="1" />
+  <project path="kernel_platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" remote="aosp" clone-depth="1" />
+  <project path="kernel_platform/prebuilts/build-tools" name="platform/prebuilts/build-tools" remote="aosp" clone-depth="1" />
+  <project path="kernel_platform/prebuilts/clang-tools" name="platform/prebuilts/clang-tools" remote="aosp" clone-depth="1" />
+  <project path="kernel_platform/prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" remote="aosp" clone-depth="1" />
+  <project path="kernel_platform/tools/mkbootimg" name="platform/system/tools/mkbootimg" remote="aosp" />
+  <project path="kernel_platform/prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" remote="aosp" clone-depth="1" />
+  <project path="kernel_platform/prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" remote="aosp" clone-depth="1" />
+  <project path="kernel_platform/prebuilts/ndk-r23" name="toolchain/prebuilts/ndk/r23" remote="aosp" clone-depth="1" />
+  <project path="kernel_platform/external/stardoc" name="platform/external/stardoc" remote="aosp" />
+  <project path="kernel_platform/external/bazel-skylib" name="platform/external/bazel-skylib" remote="aosp" />
+  <project path="kernel_platform/external/python/absl-py" name="platform/external/python/absl-py" remote="aosp" />
+</manifest>
